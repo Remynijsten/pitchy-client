@@ -4,7 +4,7 @@
 		<QR />
 		<Title content="Deelnemers" />
 		<div class="participants-list">
-			<Card :content="user.name" v-for="user in users" :key="user"/>
+			<Card :content="user" v-for="user in users" :key="user"/>
 		</div>
 	</div>
 </template>
@@ -37,7 +37,7 @@ export default {
 		})
 		
 		SOCKET.on('user_joined', data => {
-			this.users = data.users
+			this.users = data
 		})
 		
 		SOCKET.on('join', data => {

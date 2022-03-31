@@ -43,11 +43,12 @@ export default {
 		}
 	},
 	mounted() {
-		
 		SOCKET.on('username_error', data => this.toast.error(data.error))
 		
 		SOCKET.on('add_user', () => {
 			localStorage.setItem('name', this.username);
+			
+			this.username === 'Remy' ? localStorage.setItem('admin', '1') : localStorage.setItem('admin', '0')
 			
 			this.$router.push({name : 'Participants'})
 		})

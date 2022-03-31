@@ -12,25 +12,11 @@
 				</svg>
 				<h2 class="text-white">Winners</h2>
 			
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#1</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#2</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#3</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#4</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#5</span>
-					<p class="card">Pietje</p>
+				<div class="subresults-content-card flex justify-center items-center"
+					v-for="(winner, index) in winners"
+					:key="winner">
+					
+					<p class="card">{{ winner.name }}</p>
 				</div>
 			</div>
 			
@@ -40,25 +26,11 @@
 				</svg>
 				<h2 class="text-white">Losers</h2>
 				
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#10</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#11</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#12</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#13</span>
-					<p class="card">Pietje</p>
-				</div>
-				<div class="subresults-content-card flex justify-center items-center">
-					<span style="margin-right: 20px;" class="text-white">#14</span>
-					<p class="card">Pietje</p>
+				<div class="subresults-content-card flex justify-center items-center"
+				     v-for="(loser, index) in losers"
+				     :key="loser">
+					
+					<p class="card">{{ loser.name }}</p>
 				</div>
 			</div>
 		</div>
@@ -81,31 +53,19 @@
 			
 			<div class="subresults-content-cards" :class="{'active' : right}">
 				<div class="subresults-content-cards-winners">
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
-					</div>
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
-					</div>
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
+					<div class="subresults-content-card flex justify-center items-center"
+					     v-for="(winner, index) in winners"
+					     :key="winner">
+						<span style="margin-right: 20px;" class="text-white">#{{ index + 1 }}</span>
+						<p class="card">{{ winner.name }}</p>
 					</div>
 				</div>
 				<div class="subresults-content-cards-losers">
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
-					</div>
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
-					</div>
-					<div class="subresults-content-card flex justify-center items-center">
-						<span style="margin-right: 20px;" class="text-white">#1</span>
-						<p class="card">Pietje</p>
+					<div class="subresults-content-card flex justify-center items-center"
+					     v-for="(loser, index) in losers"
+					     :key="loser">
+						<span style="margin-right: 20px;" class="text-white">#10</span>
+						<p class="card">{{ loser.name }}</p>
 					</div>
 				</div>
 			</div>
@@ -124,17 +84,19 @@ export default {
 	data()
 	{
 		return {
-			right: false
+			right   : false,
+			winners : [],
+			losers  : []
 		}
 	},
 	mounted() {
 		let progress = document.querySelector('.countdown-bar-progress')
 		progress.addEventListener('animationend', () => {
-			
-			console.log('klaar met countdown')
-			
-			SOCKET.emit('load_next_state')
+			parseInt(localStorage.getItem('admin')) ? SOCKET.emit('load_next_state') : ''
 		})
+		
+		this.winners = JSON.parse(localStorage.getItem('winners'))
+		this.losers = JSON.parse(localStorage.getItem('winners')).reverse()
 	}
 }
 </script>

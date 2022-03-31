@@ -30,13 +30,10 @@ export default {
 		}
 	},
 	mounted() {
-		let progress = document.querySelector('.countdown-bar-progress')
+		let progress    = document.querySelector('.countdown-bar-progress')
 		
 		progress.addEventListener('animationend', () => {
-			
-			console.log('klaar met countdown')
-			
-			SOCKET.emit('load_next_state')
+			parseInt(localStorage.getItem('admin')) ? SOCKET.emit('load_next_state') : ''
 		})
 	}
 }

@@ -115,7 +115,7 @@ button {
     border-radius: 50px;
     background: #EFC75E;
     opacity: 1;
-    animation: countdown 3s linear; }
+    animation: countdown 60s linear; }
 
 @keyframes countdown {
   0% {
@@ -217,7 +217,14 @@ button {
     height: 50px;
     width: auto; }
   .subresults-content-card .card {
-    margin: 10px; }
+    margin: 10px;
+    max-width: none; }
+    @media (max-width: 450px) {
+      .subresults-content-card .card {
+        width: 40%; } }
+    @media (min-width: 450px) {
+      .subresults-content-card .card {
+        width: 100px; } }
   .subresults-content-cards {
     overflow: hidden;
     display: inline-flex;
