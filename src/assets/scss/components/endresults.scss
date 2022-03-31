@@ -1,0 +1,68 @@
+.endresults{
+
+    @media(max-width: 450px) {
+        &-content{
+            flex-direction: column;
+            overflow-y: scroll;
+            max-height: 500px;
+            z-index: 1000;
+        }
+
+        &-item{
+            margin-bottom: 150px;
+        }
+    }
+
+    @media(min-width: 450px) {
+        &-content{
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .next-button{
+            display: none!important;
+        }
+    }
+
+    &-item{
+        .card{
+            margin: 0!important;
+            &:after {
+                content: "";
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                bottom: -105px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &:nth-child(1){
+            .card {
+                &:after {
+                    background-image: url("../../assets/img/gold-medal.svg");
+                }
+            }
+        }
+
+        &:nth-child(2){
+            .card {
+                &:after {
+                    background-image: url("../../assets/img/silver-medal.svg");
+                }
+            }
+        }
+
+        &:nth-child(3){
+            .card {
+                &:after {
+                    background-image: url("../../assets/img/bronze-medal.svg");
+                }
+            }
+        }
+    }
+}

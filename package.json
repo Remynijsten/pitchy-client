@@ -1,0 +1,29 @@
+{
+  "name": "pitchy-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.0",
+    "qrcode.vue": "^3.3.3",
+    "socket.io": "^4.4.1",
+    "vue": "^3.0.0",
+    "vue-lottie": "^0.2.1",
+    "vue-router": "^4.0.0-0",
+    "vue-toast-notification": "^3.0.0",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~4.5.13",
+    "@vue/cli-plugin-vuex": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "@vue/compiler-sfc": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "socket.io-client": "^4.4.1"
+  }
+}

@@ -1,0 +1,31 @@
+.card{
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: $offwhite;
+    border-bottom: 5px solid darken($offwhite, 10%);
+    transition: 0.3s ease;
+    max-width: fit-content;
+
+    &-disabled{
+        opacity: 0.5;
+    }
+
+    &-active{
+        position: relative;
+        &:after{
+            content: "";
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            z-index: 10;
+            background-image: url("../../assets/img/icon-check.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}

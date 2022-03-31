@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("/src/assets/fonts/comfortaa.ttf");
+}
+
+* {
+    font-family: Comfortaa, sans-serif;
+}
+
+.text-white{
+    color: $offwhite;
+}
+
+.font-thin{
+    font-weight: 200;
+}
+
+.font-xl{
+    font-size: 2rem;
+}

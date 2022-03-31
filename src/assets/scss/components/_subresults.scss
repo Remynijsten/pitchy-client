@@ -1,0 +1,63 @@
+.subresults{
+    &-content{
+        max-width: 600px;
+        margin: 0 auto;
+
+        svg{
+            height: 50px;
+            width: auto;
+        }
+
+        &-card{
+            .card{
+                margin: 10px;
+            }
+
+        }
+
+        &-cards{
+            overflow: hidden;
+            display: inline-flex;
+            max-width: 350px;
+            &-winners, &-losers{
+                display: inline-flex;
+                flex-direction: column;
+                flex-shrink: 0;
+                min-width: 350px;
+                transition: 0.3s ease;
+            }
+            &-losers{
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    &-wrapper{
+        display: flex;
+        background-color: rgba(white, 0.5);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        &-switch{
+            width: 50%;
+            height: 50px;
+            background-color: $offwhite;
+            border-radius: 10px;
+        }
+        &-winners, &-losers{
+            width: 50%;
+            display: flex;
+            justify-content: center;align-items: center;
+            z-index: 10;
+        }
+    }
+}
+
+.active{
+    .subresults-content-cards-winners{
+        transform: translateX(-100%);
+    }
+
+    .subresults-content-cards-losers{
+        transform: translateX(-100%);
+    }
+}

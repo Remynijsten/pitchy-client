@@ -1,0 +1,11 @@
+.endresults-item:nth-child(1):after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../../assets/img/gold-medal.svg"); }
+
+/*# sourceMappingURL=endresults.css.map */

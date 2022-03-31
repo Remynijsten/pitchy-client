@@ -1,0 +1,10 @@
+.qr{
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 450px) {
+    .qr{
+        display: none;
+    }
+}

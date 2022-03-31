@@ -1,0 +1,47 @@
+.flex{
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.right{
+    transform: translateX(100%);
+}
+
+.smooth{
+    transition: 0.3s ease-in-out;
+}
+
+.hidden{
+    display: none;
+}

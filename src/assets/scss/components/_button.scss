@@ -1,0 +1,23 @@
+button{
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: $offwhite;
+    border-bottom: 5px solid darken($offwhite, 10%);
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: $darkgrey;
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+
+.button{
+    &-gold{
+        background-color: $gold!important;
+        border-bottom: 5px solid darken($gold, 10%);
+        color: $darkgrey;
+    }
+}

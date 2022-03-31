@@ -1,0 +1,25 @@
+.story{
+
+    .mobile{
+        text-align: center;
+    }
+
+    &-content{
+        text-align: center;
+    }
+
+    &-image{
+        width: 80%;
+        object-fit: cover;
+    }
+
+    &-answers{
+        display: flex;
+        &-answer{
+            padding: 20px;
+            margin: 20px;
+            flex: 25%;
+            max-width: none;
+        }
+    }
+}

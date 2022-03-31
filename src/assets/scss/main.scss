@@ -1,0 +1,141 @@
+@import "core/colors";
+@import "core/typography";
+@import "core/spacing";
+
+@import "components/button";
+@import "components/card";
+@import "components/qr";
+@import "components/countdown";
+@import "components/question";
+@import "components/story";
+@import "components/subresults";
+@import "components/endresults";
+@import "components/entername";
+@import "components/input";
+
+body{
+    background-size: cover;
+    background-image: url("../../assets/img/bg.png"), linear-gradient($green, $darkgrey);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        svg{
+            width: 100px;
+        }
+        .next-button{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            background-color: $darkgrey;
+            cursor: pointer;
+            svg{
+                fill: $gold;
+            }
+        }
+
+        .admin-button{
+            @extend  .next-button;
+            left: 0;
+        }
+
+        @media(max-width: 450px) {
+            .next-button{
+                display: none;
+            }
+        }
+    }
+
+    .title{
+        color: $offwhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 2px solid $offwhite;
+        margin: 20px;
+        @media(max-width: 450px) {
+            margin: 20px 0;
+        }
+    }
+
+    .subtitle{
+        text-align: center;
+        color: $offwhite;
+    }
+
+    .participants{
+        &-list{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            //max-width: 500px;
+            .card{
+                margin: 10px;
+            }
+        }
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+@media(max-width: 450px) {
+    .container{
+        max-width: 90%!important;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .desktop-flex {
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+    }
+}
+
+@media(min-width: 450px) {
+    .desktop{
+        display: block;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .desktop-flex{
+        display: flex;
+    }
+}
