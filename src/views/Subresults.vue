@@ -96,7 +96,13 @@ export default {
 		})
 		
 		this.winners = JSON.parse(localStorage.getItem('winners'))
-		this.losers = JSON.parse(localStorage.getItem('winners')).reverse()
+		                   .sort((a, b) => a.score - b.score)
+		                   .slice(0, 5)
+		                   .reverse()
+		
+		this.losers = JSON.parse(localStorage.getItem('losers'))
+		                   .sort((a, b) => a.score - b.score)
+		                   .slice(0, 5)
 	}
 }
 </script>

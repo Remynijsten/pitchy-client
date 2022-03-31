@@ -115,7 +115,7 @@ button {
     border-radius: 50px;
     background: #EFC75E;
     opacity: 1;
-    animation: countdown 60s linear; }
+    animation: countdown 10s linear; }
 
 @keyframes countdown {
   0% {

@@ -28,9 +28,10 @@ export default {
 	mounted() {
 		document.querySelector('.confetti').classList.remove('hidden')
 		
-		this.winners = JSON.parse(localStorage.getItem('winners')).slice(0,3)
-		
-		console.log(this.winners)
+		this.winners = JSON.parse(localStorage.getItem('winners'))
+		                   .sort((a, b) => a.score - b.score)
+		                   .slice(0, 5)
+		                   .reverse()
 	}
 }
 </script>

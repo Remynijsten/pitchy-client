@@ -12,7 +12,7 @@ export default {
 	name : "QR",
 	data() {
 		return {
-			value: 'https://google.com',
+			value: 'https://pitchy-server.herokuapp.com/',
 			size: 300,
 		}
 	},

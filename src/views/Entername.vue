@@ -52,6 +52,7 @@ export default {
 			
 			this.$router.push({name : 'Participants'})
 		})
+		
 	},
 	watch: {
 		$route(to, from) {
