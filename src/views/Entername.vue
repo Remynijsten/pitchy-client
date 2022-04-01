@@ -5,7 +5,7 @@
 				<Header />
 				<Title content="Vul je naam in" />
 				<div class="entername-content flex justify-center items-center flex-col">
-					<Input placeholder="Jouw naam" v-model="username"/>
+					<Input placeholder="Jouw naam" v-model="username" maxlength="10"/>
 					<Button content="DEELNEMEN" class="button-gold" @click="createUser"/>
 				</div>
 			

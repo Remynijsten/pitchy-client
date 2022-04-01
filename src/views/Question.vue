@@ -2,11 +2,13 @@
 	<div class="question">
 		<Header />
 		
-		<div class="countdown-bar">
+		<div class="countdown-bar overflow-hidden">
 			<div class="countdown-bar-progress"></div>
-			<div class="question-index">
-				Vraag 1/20
-			</div>
+			
+		</div>
+		
+		<div class="question-index">
+			Vraag {{ index }} / {{ questions.length }}
 		</div>
 		
 		<div class="flex-row">
@@ -58,6 +60,8 @@ export default {
 					card.classList.remove('active')
 				})
 				
+				this.selection = e.target.innerText
+				
 				e.target.classList.toggle('active')
 				
 				clearInterval(this.intervaller)
@@ -80,6 +84,11 @@ export default {
 		
 		let progress = document.querySelector('.countdown-bar-progress')
 		progress.addEventListener('animationend', () => {
+			
+			if(this.selection === '') {
+				SOCKET.emit('question', {event : 'submit', score: 0, username: localStorage.getItem('name')})
+			}
+			
 			parseInt(localStorage.getItem('admin')) ? SOCKET.emit('load_next_state') : ''
 		})
 		

@@ -1,5 +1,5 @@
 .card{
-    padding: 10px 50px;
+    padding: 10px 25px;
     border-radius: 10px;
     border: none;
     font-weight: bold;
@@ -8,6 +8,8 @@
     border-bottom: 5px solid darken($offwhite, 10%);
     transition: 0.3s ease;
     max-width: fit-content;
+    text-align: center;
+
 
     &-disabled{
         opacity: 0.5;

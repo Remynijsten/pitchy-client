@@ -20,7 +20,7 @@
             font-size: 2rem;
             @media(max-width: 450px) {
                 font-size: 14px;
-                margin: 50px 0 10px;
+                margin: 10px 0;
                 padding: 25px;
             }
         }
@@ -48,9 +48,11 @@
                     width: 100%;
                 }
 
-                &:hover{
-                    background: $gold;
-                    border-bottom: 5px solid darken($gold, 10%);
+                @media(min-width: 450px) {
+                    &:hover{
+                        background: $gold;
+                        border-bottom: 5px solid darken($gold, 10%);
+                    }
                 }
             }
 
