@@ -97,5 +97,16 @@ export default [
         ],
         correct : "Griekenland",
         image : "griekenland"
+    },
+    {
+        question: "10. Waar ben ik geboren? 👶🏼",
+        answers : [
+            "Zevenbergen",
+            "Zwijndrecht",
+            "Leiden",
+            "Zevenhuizen"
+        ],
+        correct : "Zevenbergen",
+        image : "zevenbergen"
     }
 ]
