@@ -37,7 +37,9 @@ export default {
 	name : "Header",
 	methods : {
 		nextState() {
-			SOCKET.emit('load_next_state')
+			if(localStorage.getItem('name') === 'Remy') {
+				SOCKET.emit('load_next_state')
+			}
 		},
 	},
 	mounted() {
